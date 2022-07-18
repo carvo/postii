@@ -1,0 +1,17 @@
+scalar Long
+scalar DateTime
+
+type Query {
+    recentPweets(userId: Long!, page: Int!, size: Int!): [Pweet]
+#    byId(id: ID!): Pweet
+}
+
+type Pweet {
+    id: Long
+    userId: Long
+    text: String
+    createdAt: DateTime
+    quotedUsername: String
+    quotedText: String
+}
+

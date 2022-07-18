@@ -1,0 +1,204 @@
+{
+	"info": {
+		"_postman_id": "5db67b9a-91df-47a3-9cbd-b0332a90f426",
+		"name": "Postii",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "877254"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get User Followings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9999/users/4/followings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"users",
+								"4",
+								"followings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Following",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9999/users/4/followings/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"users",
+								"4",
+								"followings",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Following",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9999/users/4/followings/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"users",
+								"4",
+								"followings",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Followers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9999/users/3/followers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"users",
+								"3",
+								"followers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Exists",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9999/users/3/exists",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"users",
+								"3",
+								"exists"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9999/users/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"users",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pweet (post)",
+			"item": [
+				{
+					"name": "New Pweet",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"text\": \"BAllalalalaal asdoiujsdiuasjdij\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9996/postii/user/7/pweet",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9996",
+							"path": [
+								"postii",
+								"user",
+								"7",
+								"pweet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Pweets",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query {\n    recentPweets(userId: 7, page: 0, size: 4) {\n        id\n        userId\n        text\n        createdAt\n        quotedUsername\n        quotedText\n    }\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9998/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9998",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

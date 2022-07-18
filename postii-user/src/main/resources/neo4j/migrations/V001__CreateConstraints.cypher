@@ -1,0 +1,1 @@
+CREATE CONSTRAINT FOR (user:User) REQUIRE user.username IS UNIQUE;
