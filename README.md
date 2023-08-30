@@ -13,7 +13,7 @@ ps. for clear examples, Postman collection "attached"
 ### Requirements
 * Java 17
 * Node 18.3 & NPM (or Yarn)
-* Docker and Docker Compose (for Neo4j, RabbitMQ and Redis - obviously this is not the best option for scale proposes, 
+* Docker and Docker Compose (for Neo4j, RabbitMQ and Redis - not the best option for scale proposes, 
 I did in way to be easier to run)
 * Free ports: 9999, 9998, 9997, 9996, 7474 & 7687 (Neo4j), 5672 & 15672 (RabbitMQ) and 6379 (Redis)
 
@@ -36,9 +36,11 @@ I did in way to be easier to run)
   ```
 
 ### Rules
-* 5 posts/pweets in one day = How is not specifying to be the same day, it is the last 24 hours 
-(in a time span of 24 hours are allowed 5 pweets)
-
+* Follow / Unfollow
+* Post a Pweet
+* Post a Pweet quoting another Pweet
+* 5 posts/pweets in 24 hours time span. ie. If the same user posts 4 messages at 11 p.m. and 1 message at 9 a.m. on the next day, this user needs to wait until 11 p.m. to post more. 
+  
 ### Dependencies Map
 * postii-user: Neo4j
 * postii-pweet-subscriber: RabbitMQ, Neo4j
